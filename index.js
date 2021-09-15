@@ -3,9 +3,8 @@
 const fs = require("fs");
 
 let objeto1 = {"name": "Carlos", "surname": "Martinez", "age": 25};
-let objeto1parseado = JSON.stringify(objeto1);
+let data = JSON.stringify(objeto1);
 
-let data = objeto1parseado;
 
 // fs.unlink("lectura.json", (err) => {
 //    if (err) {
@@ -20,14 +19,13 @@ fs.writeFile("lectura.json", data, (err) => {
    else {
       console.log("Archivo creado correctamente");
       console.log("El archivo tiene el siguiente contenido");
-      }
-});
-
-fs.readFile("lectura.json", "utf-8", (err, data) => {
-   if (err) {
-      console.log(err);
-   }
-   console.log(JSON.parse(data));
+      
+      fs.readFile("lectura.json", "utf-8", (err, data) => {
+         if (err) {
+            console.log(err);
+         } else {
+         console.log(JSON.parse(data))};
+})}
 });
 
 // FIN DE TAREA DOS
